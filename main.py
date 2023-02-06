@@ -29,13 +29,9 @@ def find_inverse_matrix(inv_A, x, i):
 
 if __name__ == '__main__':
     n = np.random.randint(2, 5)
-
     i = np.random.randint(1, n)
-
     inv_A = np.random.randint(10, size=(n, n))
-
     x = np.random.randint(10, size=(n, 1))
-
     find_inverse_matrix(inv_A, x, i)
 
 

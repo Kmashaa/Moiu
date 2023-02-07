@@ -38,9 +38,9 @@ if __name__ == '__main__':
     A_test=np.linalg.inv(inv_A)
     A_test[:,i]=x[:,0]
     A_res=np.linalg.inv(A_test)
-
-    print(A_res)
     print(AA)
+    print(A_res)
+
 
 
 

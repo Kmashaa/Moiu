@@ -91,7 +91,6 @@ if __name__ == '__main__':
     inv_A, x, i= input()
     AA=find_inverse_matrix(inv_A,x,i)
     AAA=normal_method(inv_A,x,i)
-
     for j in range(500):
         test_sing()
     for k in range(500):

@@ -24,7 +24,7 @@ def lab(c,A,x,j,A_inv=None,ii=None):
     #step 1
     if isinstance(A_inv,type(None)):
         AB = np.matrix(np.zeros(shape=(np.size(A[:, 0]), np.size(j))))
-        print(AB)
+        #print(AB)
         for i in range (np.size(j)):
             AB[:,i]=A[:,int(j[i]-1)]
 

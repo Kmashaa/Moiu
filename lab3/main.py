@@ -5,15 +5,18 @@ import main_phase as m_ph
 def test1():
         ct = np.array([1, 0, 0])
         A = np.matrix([[1, 1, 1], [2, 2, 2]])
-        b = np.array([[0], [0]])
+        b = np.array([[-10], [0]])
         x_expexted=np.array([0,0,0])
         B_expected=np.array([1])
         x, B = initial_phase(ct, A, b)
+        print("x",x)
+        print("B",B)
         if (x_expexted != x).any() or (B_expected != B).any():
                 print("test failed")
 
         else:
                 print("test passed successful")
+
 
 
 def initial_phase(ct,A,b):
@@ -44,13 +47,16 @@ def initial_phase(ct,A,b):
 
         # step 4
         while True:
+
                 x_overlined, B, AAA_inv, ii, exx = m_ph.lab(ct_overlined, np.matrix(A_overlined), x_overlined, B)
+
                 if exx:
                         break
 
         # step 5
         for i in range(n, n + m):
-                if (x_overlined[i - n] != 0):
+                if (x_overlined[i] != 0):
+                        print(i-n)
                         print("задача не совместна")
                         exit(0)
 
@@ -63,6 +69,7 @@ def initial_phase(ct,A,b):
         while True:
                 # step 7
                 if B.max() <= n and B.min() > 0:
+                        #print("b",b)
                         return xt, B
 
                 # step 8

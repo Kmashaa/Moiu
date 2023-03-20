@@ -1,6 +1,21 @@
 import numpy as np
 import main_phase as m_ph
 
+
+def test1():
+        ct = np.array([1, 0, 0])
+        A = np.matrix([[1, 1, 1], [2, 2, 2]])
+        b = np.array([[0], [0]])
+        x_expexted=np.array([0,0,0])
+        B_expected=np.array([1])
+        x, B = initial_phase(ct, A, b)
+        if (x_expexted != x).any() or (B_expected != B).any():
+                print("test failed")
+
+        else:
+                print("test passed successful")
+
+
 def initial_phase(ct,A,b):
         # step 1
         for s in range(0,np.size(b)):
@@ -103,9 +118,9 @@ def initial_phase(ct,A,b):
 
 
 if __name__ == '__main__':
-        ct=np.array([1,0,0])
-        A=np.matrix([[1,1,1],[2,2,2]])
-        b=np.array([[0],[0]])
-        x,B = initial_phase(ct,A,b)
-        print("x=",x,"B=",B)
-
+        # ct=np.array([1,0,0])
+        # A=np.matrix([[1,1,1],[2,2,2]])
+        # b=np.array([[0],[0]])
+        # x,B = initial_phase(ct,A,b)
+        # print("x=",x,"B=",B)
+        test1()
